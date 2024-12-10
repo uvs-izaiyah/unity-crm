@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Invoice Management</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Dashboard</a></li>
+            <li><a href="/pages/contacts.html">Contacts</a></li>
+            <li><a href="/pages/projects.html">Projects</a></li>
+            <li><a href="/pages/invoices.html">Invoices</a></li>
+            <li><a href="/pages/notes.html">Notes</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Create Invoice</h2>
+            <form id="new-invoice-form">
+                <label for="client">Client Name:</label>
+                <input type="text" id="client" name="client">
+                <label for="services">Services:</label>
+                <textarea id="services" name="services"></textarea>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount">
+                <button type="submit">Send Invoice</button>
+            </form>
+        </section>
+        <section id="invoice-list">
+            <h2>Invoices</h2>
+            <!-- Placeholder for dynamically generated invoices -->
+        </section>
+    </main>
+</body>
+</html>

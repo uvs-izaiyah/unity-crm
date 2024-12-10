@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Management</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Dashboard</a></li>
+            <li><a href="/pages/contacts.html">Contacts</a></li>
+            <li><a href="/pages/projects.html">Projects</a></li>
+            <li><a href="/pages/invoices.html">Invoices</a></li>
+            <li><a href="/pages/notes.html">Notes</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Contacts</h2>
+            <form id="new-contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="role">Role:</label>
+                <input type="text" id="role" name="role">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
+                <button type="submit">Add Contact</button>
+            </form>
+        </section>
+        <section id="contact-list">
+            <h2>Contact List</h2>
+            <!-- Placeholder for dynamically generated contacts -->
+        </section>
+    </main>
+</body>
+</html>
