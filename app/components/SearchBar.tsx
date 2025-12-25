@@ -1,5 +1,6 @@
 'use client';
 
+import { Search } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export function SearchBar() {
@@ -17,12 +18,17 @@ export function SearchBar() {
   }, []);
 
   return (
+    <div className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70 shadow-luxe">
+      <Search size={16} className="text-gold" />
     <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-500 shadow-sm">
       <span className="text-xs font-semibold text-slate-400">/</span>
       <input
         ref={inputRef}
         type="text"
         placeholder="Search contacts, deals, tasks"
+        className="w-56 bg-transparent text-sm text-ivory outline-none placeholder:text-white/50"
+      />
+      <span className="rounded-full border border-white/10 px-2 py-0.5 text-xs text-white/60">/</span>
         className="w-48 bg-transparent text-sm text-slate-700 outline-none"
       />
     </div>

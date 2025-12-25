@@ -1,0 +1,17 @@
+:root {
+  --color-royal: 18 64 207;
+  --color-royal-dark: 12 33 92;
+  --color-black: 7 9 18;
+  --color-gold: 212 175 55;
+  --color-gold-light: 255 232 168;
+  --color-white: 255 255 255;
+}
+
+.theme-gold-gradient {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.6), rgba(255, 232, 168, 0.2));
+}
+
+.theme-glass {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.55), rgba(17, 24, 39, 0.25));
+  backdrop-filter: blur(16px);
+}
