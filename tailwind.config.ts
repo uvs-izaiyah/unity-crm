@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 export default {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
@@ -18,6 +19,11 @@ export default {
       },
       borderRadius: {
         '2xl': '1.5rem'
+        brand: {
+          DEFAULT: "#2f5cff",
+          dark: "#1e3db8",
+          light: "#edf1ff"
+        }
       }
     }
   },

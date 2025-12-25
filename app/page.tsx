@@ -1,5 +1,6 @@
 import { BoardColumn } from './components/BoardColumn';
 import { QuickAddModal } from './components/QuickAddModal';
+import { SearchBar } from './components/SearchBar';
 import { StatCard } from './components/StatCard';
 
 const todayMoves = [
@@ -28,6 +29,13 @@ const contentPipeline = {
   ],
   RECORDED: [{ id: 'content-5', label: 'Tax planning mini-sprint' }],
   POSTED: [{ id: 'content-6', label: 'Client win carousel' }]
+const contentPipeline = {
+  IDEA: [
+    { id: 'content-1', label: 'AI bookkeeping mini-lesson' },
+    { id: 'content-2', label: 'Faith + leadership story' }
+  ],
+  RECORDED: [{ id: 'content-3', label: 'Automation audit checklist' }],
+  POSTED: [{ id: 'content-4', label: 'Client win carousel' }]
 };
 
 const dealsPipeline = {
@@ -110,6 +118,54 @@ export default function Home() {
                 </div>
               ))}
             </div>
+    <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-8 px-6 py-10">
+      <header className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-brand">Command Center CRM</p>
+          <h1 className="mt-2 text-3xl font-semibold text-slate-900">
+            Brain-friendly operations for your multi-brand empire
+          </h1>
+          <p className="mt-2 max-w-2xl text-sm text-slate-500">
+            Track today&apos;s five moves, hot follow-ups, content ready to ship, and weekly money
+            metrics in one place.
+          </p>
+        </div>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <SearchBar />
+          <QuickAddModal />
+        </div>
+      </header>
+
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <StatCard title="Weekly revenue" value="$12,450" helper="+18% vs last week" />
+        <StatCard title="Calls today" value="3" helper="1 booked, 2 prep" />
+        <StatCard title="Content to post" value="2" helper="Repurpose queue in 48h" />
+        <StatCard title="Hot follow-ups" value="7" helper="4 due today" />
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-lg font-semibold text-slate-900">Today&apos;s 5 Moves</h2>
+          <ol className="mt-4 space-y-3 text-sm text-slate-700">
+            {todayMoves.map((move, index) => (
+              <li key={move} className="flex items-center gap-3">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand/10 text-sm font-semibold text-brand">
+                  {index + 1}
+                </span>
+                {move}
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-lg font-semibold text-slate-900">Hot Leads</h2>
+          <div className="mt-4 space-y-3">
+            {hotLeads.map((lead) => (
+              <div key={lead.id} className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                <p className="text-sm font-semibold text-slate-800">{lead.label}</p>
+                <p className="text-xs text-slate-500">{lead.meta}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -128,6 +184,13 @@ export default function Home() {
           <BoardColumn title="Idea" items={contentPipeline.IDEA} accent="border-gold/30" />
           <BoardColumn title="Recorded" items={contentPipeline.RECORDED} accent="border-gold/50" />
           <BoardColumn title="Posted" items={contentPipeline.POSTED} accent="border-gold/70" />
+          <h2 className="text-lg font-semibold text-slate-900">Content pipeline</h2>
+          <p className="text-xs text-slate-500">Brain mode: POST MODE</p>
+        </div>
+        <div className="flex gap-4 overflow-x-auto pb-2">
+          <BoardColumn title="Idea" items={contentPipeline.IDEA} />
+          <BoardColumn title="Recorded" items={contentPipeline.RECORDED} />
+          <BoardColumn title="Posted" items={contentPipeline.POSTED} />
         </div>
       </section>
 
@@ -145,6 +208,13 @@ export default function Home() {
           <BoardColumn title="New" items={dealsPipeline.NEW} accent="border-gold/30" />
           <BoardColumn title="Booked" items={dealsPipeline.BOOKED} accent="border-gold/50" />
           <BoardColumn title="Paid" items={dealsPipeline.PAID} accent="border-gold/70" />
+          <h2 className="text-lg font-semibold text-slate-900">Deals pipeline</h2>
+          <p className="text-xs text-slate-500">Brain mode: SALES MODE</p>
+        </div>
+        <div className="flex gap-4 overflow-x-auto pb-2">
+          <BoardColumn title="New" items={dealsPipeline.NEW} />
+          <BoardColumn title="Booked" items={dealsPipeline.BOOKED} />
+          <BoardColumn title="Paid" items={dealsPipeline.PAID} />
         </div>
       </section>
     </main>

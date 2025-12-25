@@ -21,4 +21,9 @@ body {
 .gold-divider {
   height: 2px;
   background: linear-gradient(90deg, rgba(212, 175, 55, 0), rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0));
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
 }
